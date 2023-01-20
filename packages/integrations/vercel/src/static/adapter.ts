@@ -41,7 +41,7 @@ export default function vercelStatic(): AstroIntegration {
 					routes: [...getRedirects(routes, _config), { handle: 'filesystem' }],
 					"images": {
 						"sizes": [256, 384, 600, 1000],
-						"domains": [],
+						"domains": ["images.unsplash.com"],
 						"minimumCacheTTL": 60,
 						"formats": ["image/webp", "image/avif"]
 					}
