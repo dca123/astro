@@ -39,6 +39,12 @@ export default function vercelStatic(): AstroIntegration {
 				await writeJson(new URL(`./config.json`, getVercelOutput(_config.root)), {
 					version: 3,
 					routes: [...getRedirects(routes, _config), { handle: 'filesystem' }],
+					"images": {
+						"sizes": [256, 384, 600, 1000],
+						"domains": [],
+						"minimumCacheTTL": 60,
+						"formats": ["image/webp", "image/avif"]
+					}
 				});
 			},
 		},
