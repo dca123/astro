@@ -1,0 +1,36 @@
+---
+import { getImage } from '@astrojs/image';
+export type Props = {
+	width: number;
+	src: string;
+	format?: 'jpeg' | 'png' | 'webp' | 'avif';
+};
+const props = Astro.props;
+const src = props.src;
+const attrs = await getImage(Astro.props);
+console.log(attrs);
+
+const srcString = import.meta.env.PROD
+	? `/_vercel/image?url=${encodeURIComponent(src)}&w=${props.width}&q=75`
+	: attrs.src;
+---
+
+<style>
+	.fill {
+		object-fit: fill;
+	}
+	.contain {
+		object-fit: contain;
+	}
+	.cover {
+		object-fit: cover;
+	}
+	.scale-down {
+		object-fit: scale-down;
+	}
+	.none {
+		object-fit: none;
+	}
+</style>
+
+<img class="cover" src={srcString} />

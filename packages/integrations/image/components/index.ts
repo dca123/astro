@@ -6,10 +6,9 @@ import type { HTMLAttributes } from 'astro/types';
 import type { TransformOptions, OutputFormat } from '../dist/loaders/index.js';
 import type { ImageMetadata } from '../dist/vite-plugin-astro-image.js';
 import type { AstroBuiltinAttributes } from 'astro';
-
 export interface ImageComponentLocalImageProps
 	extends Omit<TransformOptions, 'src'>,
-		Omit<ImgHTMLAttributes, 'src' | 'width' | 'height'> {
+	Omit<ImgHTMLAttributes, 'src' | 'width' | 'height'> {
 	src: ImageMetadata | Promise<{ default: ImageMetadata }>;
 	/** Defines an alternative text description of the image. Set to an empty string (alt="") if the image is not a key part of the content (it's decoration or a tracking pixel). */
 	alt: string;
@@ -26,8 +25,8 @@ export interface ImageComponentRemoteImageProps extends TransformOptions, ImgHTM
 
 export interface PictureComponentLocalImageProps
 	extends GlobalHTMLAttributes,
-		Omit<TransformOptions, 'src'>,
-		Pick<ImgHTMLAttributes, 'loading' | 'decoding'> {
+	Omit<TransformOptions, 'src'>,
+	Pick<ImgHTMLAttributes, 'loading' | 'decoding'> {
 	src: ImageMetadata | Promise<{ default: ImageMetadata }>;
 	/** Defines an alternative text description of the image. Set to an empty string (alt="") if the image is not a key part of the content (it's decoration or a tracking pixel). */
 	alt: string;
@@ -38,8 +37,8 @@ export interface PictureComponentLocalImageProps
 
 export interface PictureComponentRemoteImageProps
 	extends GlobalHTMLAttributes,
-		TransformOptions,
-		Pick<ImgHTMLAttributes, 'loading' | 'decoding'> {
+	TransformOptions,
+	Pick<ImgHTMLAttributes, 'loading' | 'decoding'> {
 	src: string;
 	/** Defines an alternative text description of the image. Set to an empty string (alt="") if the image is not a key part of the content (it's decoration or a tracking pixel). */
 	alt: string;

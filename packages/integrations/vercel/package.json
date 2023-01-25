@@ -22,8 +22,13 @@
     "./serverless": "./dist/serverless/adapter.js",
     "./serverless/entrypoint": "./dist/serverless/entrypoint.js",
     "./static": "./dist/static/adapter.js",
+    "./components": "./components/index.js",
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "components"
+  ],
   "typesVersions": {
     "*": {
       "edge": [
@@ -45,12 +50,13 @@
   },
   "dependencies": {
     "@astrojs/webapi": "^2.0.0-beta.0",
+    "@astrojs/image": "workspace:*",
     "@vercel/nft": "^0.22.1",
     "fast-glob": "^3.2.11",
     "set-cookie-parser": "^2.5.1"
   },
   "peerDependencies": {
-    "astro": "workspace:^2.0.0-beta.3"
+    "astro": "workspace:*"
   },
   "devDependencies": {
     "@types/set-cookie-parser": "^2.4.2",

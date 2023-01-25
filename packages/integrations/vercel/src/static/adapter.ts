@@ -1,8 +1,7 @@
 import type { AstroAdapter, AstroConfig, AstroIntegration } from 'astro';
-
+import image from '@astrojs/image'
 import { emptyDir, getVercelOutput, writeJson } from '../lib/fs.js';
 import { getRedirects } from '../lib/redirects.js';
-
 const PACKAGE_NAME = '@astrojs/vercel/static';
 
 function getAdapter(): AstroAdapter {
@@ -22,7 +21,6 @@ export default function vercelStatic(): AstroIntegration {
 			'astro:config:done': ({ setAdapter, config }) => {
 				setAdapter(getAdapter());
 				_config = config;
-
 				if (config.output === 'server') {
 					throw new Error(`${PACKAGE_NAME} should be used with output: 'static'`);
 				}

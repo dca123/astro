@@ -3284,6 +3284,7 @@ importers:
 
   packages/integrations/vercel:
     specifiers:
+      '@astrojs/image': workspace:*
       '@astrojs/webapi': ^2.0.0-beta.0
       '@types/set-cookie-parser': ^2.4.2
       '@vercel/nft': ^0.22.1
@@ -3294,6 +3295,7 @@ importers:
       mocha: ^9.2.2
       set-cookie-parser: ^2.5.1
     dependencies:
+      '@astrojs/image': link:../image
       '@astrojs/webapi': link:../../webapi
       '@vercel/nft': 0.22.6
       fast-glob: 3.2.12
